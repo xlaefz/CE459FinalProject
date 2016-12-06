@@ -1,0 +1,42 @@
+function a = PlotFigure1( elcentro_t, d_lsim_el, d_el1, d_el2, d_el3, d_el4,d_el5,d_el6 )
+mFigure1 = figure(1);
+subplot(3,2,1);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el1);
+title('Displacement for Elcentro - Piecewise Constant Method vs lsim');
+legend('MATLAB lsim','Piecewise Constant');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,2);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el2);
+title('Displacement for Elcentro - Piecewise Linear Method vs lsim');
+legend('MATLAB lsim','Piecewise Linear');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,3);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el3);
+title('Displacement for Elcentro - Newmark vs lsim');
+legend('MATLAB lsim','Newmark');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,4);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el4);
+title('Displacement for Elcentro - Rk4 vs lsim');
+legend('MATLAB lsim','Rk4');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,5);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el5);
+title('Displacement for Elcentro - Wilson vs lsim');
+legend('MATLAB lsim','Wilson');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,6);
+plot(elcentro_t,d_lsim_el,elcentro_t,d_el6);
+title('Displacement for Elcentro - Central vs lsim');
+legend('MATLAB lsim','Central');
+xlabel('Time');
+ylabel('Displacement');
+set(mFigure1, 'Position', [0,0,800,800]);
+a = 1;
+end
+

@@ -1,0 +1,42 @@
+function [ a ] = PlotHarmonicExcitationPlots( t_h, d_lsim_h, d_h1, d_h2, d_h3, d_h4, d_h5, d_h6 )
+mFigure5 = figure(5);
+subplot(3,2,1);
+plot(t_h,d_lsim_h,t_h,d_h1);
+title('Displacement for Harmonic - Piecewise Constant Method vs lsim');
+legend('MATLAB lsim','Piecewise Constant');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,2);
+plot(t_h,d_lsim_h,t_h,d_h2);
+title('Displacement for Harmonic - Piecewise Linear Method vs lsim');
+legend('MATLAB lsim','Piecewise Constant');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,3);
+plot(t_h,d_lsim_h,t_h,d_h3);
+title('Displacement for Harmonic - Newmark vs lsim');
+legend('MATLAB lsim','Newmark');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,4);
+plot(t_h,d_lsim_h,t_h,d_h4);
+title('Displacement for Harmonic - Rk4 vs lsim');
+legend('MATLAB lsim','Rk4');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,5);
+plot(t_h,d_lsim_h,t_h,d_h5);
+title('Displacement for Harmonic - Wilson vs lsim');
+legend('MATLAB lsim','Wilson');
+xlabel('Time');
+ylabel('Displacement');
+subplot(3,2,6);
+plot(t_h,d_lsim_h,t_h,d_h6);
+title('Displacement for Harmonic - Central vs lsim');
+legend('MATLAB lsim','Central');
+xlabel('Time');
+ylabel('Displacement');
+set(mFigure5, 'Position', [0,0,800,800]);
+a = 1;
+end
+

@@ -1,0 +1,42 @@
+function [ a ] = PlotFigure2(elcentro_t, v_lsim_el, v_el1, v_el2, v_el3, v_el4, v_el5, v_el6)
+mFigure2 = figure(2);
+subplot(3,2,1);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el1);
+title('Velocity for Elcentro - Piecewise Constant Method vs lsim');
+legend('MATLAB lsim','Piecewise Constant');
+xlabel('Time');
+ylabel('Velocity');
+subplot(3,2,2);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el2);
+title('Velocity for Elcentro - Piecewise Linear Method vs lsim');
+legend('MATLAB lsim','Piecewise Linear');
+xlabel('Time');
+ylabel('Velocity');
+subplot(3,2,3);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el3);
+title('Velocity for Elcentro - Newmark vs lsim');
+legend('MATLAB lsim','Newmark');
+xlabel('Time');
+ylabel('Velocity');
+subplot(3,2,4);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el4);
+title('Velocity for Elcentro - Rk4 vs lsim');
+legend('MATLAB lsim','Rk4');
+xlabel('Time');
+ylabel('Velocity');
+subplot(3,2,5);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el5);
+title('Velocity for Elcentro - Wilson vs lsim');
+legend('MATLAB lsim','Wilson');
+xlabel('Time');
+ylabel('Velocity');
+subplot(3,2,6);
+plot(elcentro_t,v_lsim_el,elcentro_t,v_el6);
+title('Velocity for Elcentro - Central vs lsim');
+legend('MATLAB lsim','Central');
+xlabel('Time');
+ylabel('Velocity');
+set(mFigure2, 'Position', [0,0,800,800]);
+a = 1;
+end
+
