@@ -1,8 +1,8 @@
 
 
-   % Jason Zheng
-   % CE 459 Project
-   % Piecewise_Constant_Excitation
+% Jason Zheng
+% CE 459 Project
+% Piecewise_Constant_Excitation
 clc; clear all; close all;
 f = 1;
 z = 0.04; % Damping ratio
@@ -67,23 +67,23 @@ t_h = 0:0.01:8*pi;
 f_h = sin(t_h);
 ylsim_h = lsim( ss([0 1;-w^2 -2*z*w],[0;-1],eye(2),[0;0]), -f_h, t_h, [x0;v0]);
 d_lsim_h=ylsim_h(:,1); v_lsim_h=ylsim_h(:,2);
-[d_h1,v_h1] = zoh( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h1 = std(d_h1-d_lsim_h)/std(d_lsim_h);
+[d_h_zoh,v_h_zoh] = zoh( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h1 = std(d_h_zoh-d_lsim_h)/std(d_lsim_h);
 
-[d_h2,v_h2] = foh( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h2 = std(d_h2-d_lsim_h)/std(d_lsim_h);
+[d_h_foh,v_h_foh] = foh( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h2 = std(d_h_foh-d_lsim_h)/std(d_lsim_h);
 
-[d_h3,v_h3] = newmark( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h3 = std(d_h3-d_lsim_h)/std(d_lsim_h);
+[d_h_newmark,v_h_newmark] = newmark( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h3 = std(d_h_newmark-d_lsim_h)/std(d_lsim_h);
 
-[d_h4,v_h4] = rk4( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h4 = std(d_h4-d_lsim_h)/std(d_lsim_h);
+[d_h_rk4,v_h_rk4] = rk4( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h4 = std(d_h_rk4-d_lsim_h)/std(d_lsim_h);
 
-[d_h5,v_h5] = wilson( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h5 = std(d_h5-d_lsim_h)/std(d_lsim_h);
+[d_h_wilson,v_h_wilson] = wilson( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h5 = std(d_h_wilson-d_lsim_h)/std(d_lsim_h);
 
-[d_h6,v_h6] = central( w, z, t_h, f_h, x0, v0 );
-relative_rms_displ_error_h6 = std(d_h6.'-d_lsim_h)/std(d_lsim_h);
+[d_h_central,v_h_central] = central( w, z, t_h, f_h, x0, v0 );
+relative_rms_displ_error_h6 = std(d_h_central.'-d_lsim_h)/std(d_lsim_h);
 
 % Plots of response to Elcentro Eq
 %for displacement and velocity
@@ -96,8 +96,8 @@ mFigure3Plot = PlotNorthridgeRes(northridge_t, mD_lsim_northridge, d_nor1, d_nor
 mFigure4Plot = PlotNorthRidgeVelRes(northridge_t, v_lsim_nor, v_nor1, v_northridge_foh, v_nor_newmark, v_nor_rk4, v_nor_wilson, v_nor_central);
 
 % Harmonic Excitation Plots
-mHarmonicResponseFig = PlotHarmonicExcitationPlots(t_h, d_lsim_h, d_h1, d_h2, d_h3, d_h4, d_h5, d_h6);
-mHarmonicVelResponseFig = PlotVelHarmonicExcitationPlots(t_h, v_lsim_h, v_h1, v_h2, v_h3, v_h4, v_h5, v_h6);
+mHarmonicResponseFig = PlotHarmonicExcitationPlots(t_h, d_lsim_h, d_h_zoh, d_h_foh, d_h_newmark, d_h_rk4, d_h_wilson, d_h_central);
+mHarmonicVelResponseFig = PlotVelHarmonicExcitationPlots(t_h, v_lsim_h, v_h_zoh, v_h_foh, v_h_newmark, v_h_rk4, v_h_wilson, v_h_central);
 
 %zoh,foh,newmark,rk4,wilson,central
 % Accuracy and stability test

@@ -1,12 +1,7 @@
 % CE 459 Final proiect - Piecewise constant approximation
-% w = natural frequency
-% z = damping ratio
-% t = time vector
-% p = force vector
-% x0 = initial displacement
-% v0 = initial velocity
 
 %using zoh fn returns an array [x,v]
+%Calling fn with [x,v] = zoh(natural frequency, damping ratio, time vector, force vector, initial displacement, initial velocity);
 function [x,v] = zoh(w, z, t, p, x0, v0)
 	
 	if nargin < 5
