@@ -34,33 +34,33 @@ relative_rms_veloc_error_el_centro_foh = std(v_el_centro_foh-v_lsim_el)/std(v_ls
 relative_rms_displ_error_nor_foh = std(d_northridge_foh-mD_lsim_northridge)/std(mD_lsim_northridge);
 relative_rms_veloc_error_nor_foh = std(v_northridge_foh-v_lsim_nor)/std(v_lsim_nor);
 
-[d_el_newmark,v_el_newmark] = newmark( w, z, elcentro_t, elcentro_eq, x0, v0 );
-[d_nor_newmark,v_nor_newmark] = newmark( w, z, northridge_t, northridge_eq, x0, v0 );
-relative_rms_displ_error_el_newmark = std(d_el_newmark-d_lsim_el)/std(d_lsim_el);
-relative_rms_veloc_error_el_newmark = std(v_el_newmark-v_lsim_el)/std(v_lsim_el);
-relative_rms_displ_error_nor_newmark = std(d_nor_newmark-mD_lsim_northridge)/std(mD_lsim_northridge);
-relative_rms_veloc_error_nor_newmark = std(v_nor_newmark-v_lsim_nor)/std(v_lsim_nor);
+[d_el3,v_el3] = newmark( w, z, elcentro_t, elcentro_eq, x0, v0 );
+[d_nor3,v_nor3] = newmark( w, z, northridge_t, northridge_eq, x0, v0 );
+relative_rms_displ_error_el_newmark = std(d_el3-d_lsim_el)/std(d_lsim_el);
+relative_rms_veloc_error_el_newmark = std(v_el3-v_lsim_el)/std(v_lsim_el);
+relative_rms_displ_error_nor_newmark = std(d_nor3-mD_lsim_northridge)/std(mD_lsim_northridge);
+relative_rms_veloc_error_nor_newmark = std(v_nor3-v_lsim_nor)/std(v_lsim_nor);
 
-[d_el_rk4,v_el_rk4] = rk4( w, z, elcentro_t, elcentro_eq, x0, v0 );
-[d_nor_rk4,v_nor_rk4] = rk4( w, z, northridge_t, northridge_eq, x0, v0 );
-relative_rms_displ_error_el_rk4 = std(d_el_rk4-d_lsim_el)/std(d_lsim_el);
-relative_rms_veloc_error_el_rk4 = std(v_el_rk4-v_lsim_el)/std(v_lsim_el);
-relative_rms_displ_error_nor_rk4 = std(d_nor_rk4-mD_lsim_northridge)/std(mD_lsim_northridge);
-relative_rms_veloc_error_nor_rk4 = std(v_nor_rk4-v_lsim_nor)/std(v_lsim_nor);
+[d_el4,v_el4] = rk4( w, z, elcentro_t, elcentro_eq, x0, v0 );
+[d_nor4,v_nor4] = rk4( w, z, northridge_t, northridge_eq, x0, v0 );
+relative_rms_displ_error_el_rk4 = std(d_el4-d_lsim_el)/std(d_lsim_el);
+relative_rms_veloc_error_el_rk4 = std(v_el4-v_lsim_el)/std(v_lsim_el);
+relative_rms_displ_error_nor_rk4 = std(d_nor4-mD_lsim_northridge)/std(mD_lsim_northridge);
+relative_rms_veloc_error_nor_rk4 = std(v_nor4-v_lsim_nor)/std(v_lsim_nor);
 
-[d_el_wilson,v_el_wilson] = wilson( w, z, elcentro_t, elcentro_eq, x0, v0 );
-[d_nor_wilson,v_nor_wilson] = wilson( w, z, northridge_t, northridge_eq, x0, v0 );
-relative_rms_displ_error_el_wilson = std(d_el_wilson-d_lsim_el)/std(d_lsim_el);
-relative_rms_veloc_error_el_wilson = std(v_el_wilson-v_lsim_el)/std(v_lsim_el);
-relative_rms_displ_error_nor_wilson = std(d_nor_wilson-mD_lsim_northridge)/std(mD_lsim_northridge);
-relative_rms_veloc_error_nor_wilson = std(v_nor_wilson-v_lsim_nor)/std(v_lsim_nor);
+[d_el5,v_el5] = wilson( w, z, elcentro_t, elcentro_eq, x0, v0 );
+[d_nor5,v_nor5] = wilson( w, z, northridge_t, northridge_eq, x0, v0 );
+relative_rms_displ_error_el_wilson = std(d_el5-d_lsim_el)/std(d_lsim_el);
+relative_rms_veloc_error_el_wilson = std(v_el5-v_lsim_el)/std(v_lsim_el);
+relative_rms_displ_error_nor_wilson = std(d_nor5-mD_lsim_northridge)/std(mD_lsim_northridge);
+relative_rms_veloc_error_nor_wilson = std(v_nor5-v_lsim_nor)/std(v_lsim_nor);
 
-[d_el_central,v_el_central] = central( w, z, elcentro_t, elcentro_eq, x0, v0 );
-[d_nor_central,v_nor_central] = central( w, z, northridge_t, northridge_eq, x0, v0 );
-relative_rms_displ_error_el_central = std(d_el_central-d_lsim_el)/std(d_lsim_el);
-relative_rms_veloc_error_el_central = std(v_el_central-v_lsim_el)/std(v_lsim_el);
-relative_rms_displ_error_nor_central = std(d_nor_central-mD_lsim_northridge)/std(mD_lsim_northridge);
-relative_rms_veloc_error_nor_central = std(v_nor_central-v_lsim_nor)/std(v_lsim_nor);
+[d_el6,v_el6] = central( w, z, elcentro_t, elcentro_eq, x0, v0 );
+[d_nor6,v_nor6] = central( w, z, northridge_t, northridge_eq, x0, v0 );
+relative_rms_displ_error_el_central = std(d_el6-d_lsim_el)/std(d_lsim_el);
+relative_rms_veloc_error_el_central = std(v_el6-v_lsim_el)/std(v_lsim_el);
+relative_rms_displ_error_nor_central = std(d_nor6-mD_lsim_northridge)/std(mD_lsim_northridge);
+relative_rms_veloc_error_nor_central = std(v_nor6-v_lsim_nor)/std(v_lsim_nor);
 
 % Response to harmonic excitation
 t_h = 0:0.01:8*pi;
@@ -87,13 +87,13 @@ relative_rms_displ_error_h6 = std(d_h6.'-d_lsim_h)/std(d_lsim_h);
 
 % Plots of response to Elcentro Eq
 %for displacement and velocity
-mFigure1Plot = PlotFigure1(elcentro_t, d_lsim_el, d_el, d_el_centro_foh, d_el_newmark, d_el_rk4,d_el_wilson,d_el_central);
-mFigure2Plot = PlotFigure2(elcentro_t, v_lsim_el, v_el1, v_el_centro_foh, v_el_newmark, v_el_rk4, v_el_wilson, v_el_central);
+mFigure1Plot = PlotFigure1(elcentro_t, d_lsim_el, d_el, d_el_centro_foh, d_el3, d_el4,d_el5,d_el6);
+mFigure2Plot = PlotFigure2(elcentro_t, v_lsim_el, v_el1, v_el_centro_foh, v_el3, v_el4, v_el5, v_el6);
 
 % Plots for response to Northridge Eq
 %for displacement and velocity
-mFigure3Plot = PlotNorthridgeRes(northridge_t, mD_lsim_northridge, d_nor1, d_northridge_foh, d_nor_newmark, d_nor_rk4, d_nor_wilson, d_nor_central);
-mFigure4Plot = PlotNorthRidgeVelRes(northridge_t, v_lsim_nor, v_nor1, v_northridge_foh, v_nor_newmark, v_nor_rk4, v_nor_wilson, v_nor_central);
+mFigure3Plot = PlotNorthridgeRes(northridge_t, mD_lsim_northridge, d_nor1, d_northridge_foh, d_nor3, d_nor4, d_nor5, d_nor6);
+mFigure4Plot = PlotNorthRidgeVelRes(northridge_t, v_lsim_nor, v_nor1, v_northridge_foh, v_nor3, v_nor4, v_nor5, v_nor6);
 
 % Harmonic Excitation Plots
 mHarmonicResponseFig = PlotHarmonicExcitationPlots(t_h, d_lsim_h, d_h1, d_h2, d_h3, d_h4, d_h5, d_h6);
@@ -170,31 +170,33 @@ RMS_Displ_El=[relative_rms_displ_error_el_zoh;
                 relative_rms_displ_error_el_newmark;
                 relative_rms_displ_error_el_rk4;
                 relative_rms_displ_error_el_wilson;
-                relative_rms_displ_error_el_central];
+                relative_rms_displ_error_el_central]
 RMS_Vel_El=[relative_rms_veloc_error_el_zoh;
                 relative_rms_veloc_error_el_centro_foh;
                 relative_rms_veloc_error_el_newmark;
                 relative_rms_veloc_error_el_rk4;
                 relative_rms_veloc_error_el_wilson;
-                relative_rms_veloc_error_el_central];
+                relative_rms_veloc_error_el_central]
 RMS_Displ_Nor=[relative_rms_displ_error_nor_zoh;
                 relative_rms_displ_error_nor_foh;
                 relative_rms_displ_error_nor_newmark;
                 relative_rms_displ_error_nor_rk4;
                 relative_rms_displ_error_nor_wilson;
-                relative_rms_displ_error_nor_central];
+                relative_rms_displ_error_nor_central]
 
 RMS_Vel_Nor=[relative_rms_veloc_error_nor_zoh;
                 relative_rms_veloc_error_nor_foh;
                 relative_rms_veloc_error_nor_newmark;
                 relative_rms_veloc_error_nor_rk4;
                 relative_rms_veloc_error_nor_wilson;
-                relative_rms_veloc_error_nor_central];
+                relative_rms_veloc_error_nor_central]
             
 fileid = fopen('Relative_RMS_Disp_Veloc_6_Methods.txt','w');
 
 for i = 1:6
+    
    fprintf(fileid, '%f %f %f %f \n', RMS_Displ_El(i), RMS_Vel_El(i), RMS_Displ_Nor(i), RMS_Vel_Nor(i)); 
+    
 end
 fclose(fileid);
             
@@ -206,27 +208,29 @@ Newmark = [relative_rms_displ_error_newmark;relative_rms_veloc_error_newmark];
 Rk4 = [relative_rms_displ_error_rk4;relative_rms_veloc_error_rk4];
 Wilson = [relative_rms_displ_error_wilson;relative_rms_veloc_error_wilson];
 Central = [relative_rms_displ_error_central;relative_rms_veloc_error_central];
-data = {'RMS_Displ_0.001';
-        'RMS_Displ_0.01';
-        'RMS_Displ_0.02';
-        'RMS_Displ_0.05';
-        'RMS_Displ_0.10';
-        'RMS_Displ_0.20';
-        'RMS_Displ_0.50';
-        'RMS_Displ_1.00'
-         'RMS_Vel_0.001';
-         'RMS_Vel_0.01';
-         'RMS_Vel_0.02';
-         'RMS_Vel_0.05';
-         'RMS_Vel_0.1';
-         'RMS_Vel_0.2';
-         'RMS_Vel_0.5';
-         'RMS_Vl_1'
-        };
-            
-mHarmonicFileId = fopen('Harmonic.txt','w');
-m = size(Piecewise_Constant);
-for i = 1:m
-   fprintf(mHarmonicFileId, ' %f %f %f %f %f %f \n', Piecewise_Constant(i), Piecewise_Linear(i), Newmark(i), Rk4(i), Wilson(i), Central(i)); 
+RMS_values = {'RMS_Displ_0.001';
+                'RMS_Displ_0.01';
+                'RMS_Displ_0.02';
+                'RMS_Displ_0.05';
+                'RMS_Displ_0.1';
+                'RMS_Displ_0.2';
+                'RMS_Displ_0.5';
+                'RMS_Displ_1';
+                'RMS_Vel_0.001';
+                'RMS_Vel_0.01';
+                'RMS_Vel_0.02';
+                'RMS_Vel_0.05';
+                'RMS_Vel_0.1';
+                'RMS_Vel_0.2';
+                'RMS_Vel_0.5';
+                'RMS_Vl_1'};
+mHarmonicFileId = fopen('Relative_RMS_Disp_Veloc_6_Methods.txt','w');
+
+for i = 1:6
+    
+   fprintf(mHarmonicFileId, '%f %f %f %f %f %f %f \n', RMS_values(i),
+   Piecewise_Constant(i), Piecewise_Linear(i), 
+   Newmark(i), Rk4(i), ); 
+    
 end
 fclose(mHarmonicFileId);
